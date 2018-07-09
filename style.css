@@ -1,5 +1,8 @@
 textarea {
     color: black;
+    height: 200px;
+    width: 500px;
+    overflow: hidden;
 }
 
 .color-120 {

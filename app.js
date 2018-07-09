@@ -1,8 +1,15 @@
-// VERSÃO 0.0.3
-// Se você passar os 140 caracteres, desative o botão. ok
-// Se você passar os 120 caracteres, mostre o contador com outra cor.
-// Se você passar os 130 caracteres, mostre o contador com outra cor.
-// Se você passar os 140 caracteres, mostre o contador em negativo.
+// VERSÃO 0.0.4
+// Ao pressionar enter (/n) aumente a área de texto de acordo com o tamanho do texto.
+
+// VERSÃO 0.0.5 (EXTRA)
+// Se o número de caracteres digitados (sem dar um "enter") exceder o tamanho da área 
+// de texto por padrão, mais uma linha deverá ser adicionada para que a rolagem não apareça. 
+// (Se aplicável)
+
+// VERSÃO 0.0.6 (EXTRA)
+// Adicione a hora em que o tweet foi publicado no formato de 24 horas hh:mm.
+// Nota: Para formatar a data e a hora, você pode criar sua própria função ou usar 
+// uma biblioteca como moment.js.
 
 
 var btnInputText = document.getElementById('input-text-btn');
@@ -10,9 +17,6 @@ var userInputText = document.getElementById('input-text-area');
 var countChar = document.getElementById('count-char');
 countChar.textContent = 140;
 btnInputText.disabled = true;
-// if (userInputText.value.length === 0 || userInputText.value === ' ') {
-//     btnInputText.disabled = true;
-// }
 
 function inputControls() {
     countChar.textContent = (140 - userInputText.value.length);
@@ -36,6 +40,12 @@ function inputControls() {
     }
 };
 
+function textAreaSize() { 
+    userInputText = event.currentTarget;
+    userInputText.style.height = 'auto';
+    userInputText.style.height = userInputText.scrollHeight + 'px';
+};
+
 function userPostText() {
     event.preventDefault();
     if (userInputText.value) {
@@ -48,6 +58,7 @@ function userPostText() {
    } 
 };
 
+userInputText.addEventListener('keydown', textAreaSize);
 userInputText.addEventListener('keyup', inputControls);
 btnInputText.addEventListener('click', userPostText);
 
