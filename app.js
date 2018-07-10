@@ -1,15 +1,4 @@
-// VERSÃO 0.0.4
-// Ao pressionar enter (/n) aumente a área de texto de acordo com o tamanho do texto.
-
-// VERSÃO 0.0.5 (EXTRA)
-// Se o número de caracteres digitados (sem dar um "enter") exceder o tamanho da área 
-// de texto por padrão, mais uma linha deverá ser adicionada para que a rolagem não apareça. 
-// (Se aplicável)
-
-// VERSÃO 0.0.6 (EXTRA)
-// Adicione a hora em que o tweet foi publicado no formato de 24 horas hh:mm.
-// Nota: Para formatar a data e a hora, você pode criar sua própria função ou usar 
-// uma biblioteca como moment.js.
+// VERSÃO 0.0.6 Twitter Laboratória
 
 
 var btnInputText = document.getElementById('input-text-btn');
@@ -40,7 +29,7 @@ function inputControls() {
     }
 };
 
-function textAreaSize() { 
+function textAreaSize() {
     userInputText = event.currentTarget;
     userInputText.style.height = 'auto';
     userInputText.style.height = userInputText.scrollHeight + 'px';
@@ -49,8 +38,7 @@ function textAreaSize() {
 function userPostText() {
     event.preventDefault();
     if (userInputText.value) {
-        var postTextOutput =  document.getElementById('output-text');
-        //var userText = document.createTextNode(userInputText.value);
+        var postTextOutput = document.getElementById('output-text');
         var newUserPost = document.createElement('li');
         newUserPost.textContent = userInputText.value;
         var dateOfPost = document.createElement('span');
@@ -59,7 +47,7 @@ function userPostText() {
         newUserPost.appendChild(dateOfPost);
         postTextOutput.appendChild(newUserPost);
         console.log(userText.length);
-   } 
+    }
 };
 
 userInputText.addEventListener('keydown', textAreaSize);

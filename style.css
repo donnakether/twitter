@@ -1,35 +1,85 @@
+/*
+colors
+blue  #00a3ec
+light blue #f5f8fa
+*/
+
 * {
     box-sizing: border-box;
+    margin: 0;
 }
 body {
     font-family: 'Courier New', Courier, monospace;
     font-size: 18px;
 }
+.container {
+    margin: 0 auto;
+    padding: 5%;
+}
+header {
+    text-align: center;
+    background-color: #00a3ec;
+    color: #f5f8fa;
+    margin-bottom: 2%;
+}
+#profile {
+    width: 40%;
+    float: left;
+    text-align: center;
+}
+#user-input-text {
+    width: 60%;
+    float: left;
+}
 ul {
     list-style: none;
-    padding-left: 5%;
+    padding-left: 0;
 }
 li {
     margin-top: 2%;
 }
+
 #output-text span {
     margin-left: 5%;
 }
 textarea {
     color: black;
-    max-height: 150px;
-    width: 60%;
+    background-color: #f5f8fa;
+    min-height: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    width: 100%;
     overflow: hidden;
+    border: none;
+    border-bottom: 1px dashed #00a3ec;
+    margin-bottom: 5%;
+    padding: 3% 2%;
 }
-
+#input-text-btn {
+    border: 1px solid #00a3ec;
+    color: #f5f8fa;
+    background-color: #00a3ec;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 8px 15px;
+}
+#input-text-btn:disabled {
+    color: #00a3ec;
+    background-color: #f5f8fa;
+}
+.color-def {
+    color: #00a3ec;
+    font-weight: bold;
+}
 .color-120 {
-    color: aqua;
+    color: rgb(255, 115, 0);
 }
 
 .color-130 {
-    color: blueviolet;
+    color: rgb(255, 239, 9);
 }
 
 .color-140 {
-    color: red;
+    color: rgba(255, 0, 0, 0.877);
 }
