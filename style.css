@@ -1,7 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+}
+ul {
+    list-style: none;
+    padding-left: 5%;
+}
+li {
+    margin-top: 2%;
+}
+#output-text span {
+    margin-left: 5%;
+}
 textarea {
     color: black;
-    height: 200px;
-    width: 500px;
+    max-height: 150px;
+    width: 60%;
     overflow: hidden;
 }
 

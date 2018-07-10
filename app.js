@@ -50,9 +50,13 @@ function userPostText() {
     event.preventDefault();
     if (userInputText.value) {
         var postTextOutput =  document.getElementById('output-text');
-        var userText = document.createTextNode(userInputText.value);
-        var newUserPost = document.createElement('p');
-        newUserPost.appendChild(userText);
+        //var userText = document.createTextNode(userInputText.value);
+        var newUserPost = document.createElement('li');
+        newUserPost.textContent = userInputText.value;
+        var dateOfPost = document.createElement('span');
+        var currentTime = new Date();
+        dateOfPost.textContent = 'Hora: ' + currentTime.getHours() + '\:' + currentTime.getMinutes();
+        newUserPost.appendChild(dateOfPost);
         postTextOutput.appendChild(newUserPost);
         console.log(userText.length);
    } 
